@@ -1,0 +1,32 @@
+{
+  "month": "2026-13",
+  "people": [
+    {
+      "id": "not-a-uuid",
+      "name": "",
+      "email": "not-an-email",
+      "referredBy": null,
+      "createdAt": "not-a-date",
+      "updatedAt": "not-a-date"
+    }
+  ],
+  "codes": [
+    {
+      "id": "also-not-uuid",
+      "month": "2026-13",
+      "code": "",
+      "category": "invalid",
+      "createdAt": "not-a-date"
+    }
+  ],
+  "assignments": [
+    {
+      "id": "bad",
+      "personId": "bad",
+      "codeId": "bad",
+      "used": "yes",
+      "resultAmount": -1,
+      "updatedAt": "not-a-date"
+    }
+  ]
+}
