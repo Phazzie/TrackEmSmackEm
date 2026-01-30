@@ -50,6 +50,27 @@ A SvelteKit app is scaffolded and wired for a single-user casino referral tracke
 - `src/routes/` — SvelteKit UI routes.
 - `supabase/schema.sql` — database schema.
 
+### Files still to create (to finish MVP cleanly)
+Required:
+- `.env` (local only, not committed) — set `APP_PASSCODE`, `APP_SESSION_SECRET`, `STORAGE_MODE`, etc.
+- `supabase/seed.sql` — seed data so probes and demo data work without manual inserts.
+- `src/routes/logout/+server.ts` — clear `trackem_session` cookie and redirect to `/login`.
+- `tests/integration/app-flow.test.ts` — minimal end-to-end test to cover create person, create code, set assignment, and export.
+
+Optional (if chosen later):
+- `supabase/rls.sql` — Row Level Security policies if you move beyond single-user.
+- `supabase/indexes.sql` — additional indexes if query volume grows.
+
+### Coding styles and conventions (must-follow)
+- Seam Driven Development order: Contract → Probe → Fixture → Mock → Test → Adapter.
+- Every seam has `fixtures/<seam>/sample.json` and `fixtures/<seam>/fault.json`.
+- Mocks must load fixtures from disk (no hardcoded fake data).
+- Adapters: no `fs.*Sync`, no `process.cwd()`, no `child_process`, no importing other adapters.
+- No `as any` / `as unknown as` in `src/`.
+- No top-level `let` in non-test files.
+- Use `.js` extension in TypeScript imports for runtime ESM compatibility.
+- Keep server logic in SvelteKit `+page.server.ts` / `+server.ts`; avoid `localStorage` in shared code.
+
 ### How to run locally
 ```bash
 cd casino-referral-tracker

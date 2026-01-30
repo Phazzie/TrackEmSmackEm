@@ -7,7 +7,7 @@ import type { StoragePort } from '../ports/storage.port.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const ROOT = path.resolve(__dirname, '../../../..');
+const ROOT = path.resolve(__dirname, '../../..');
 
 function getFixturePath(scenario: 'sample' | 'fault') {
 	return path.join(ROOT, 'fixtures', 'storage', `${scenario}.json`);
