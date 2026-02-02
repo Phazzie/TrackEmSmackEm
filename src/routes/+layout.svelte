@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import { Analytics } from '@vercel/analytics/svelte';
 </script>
 
 <svelte:head>
@@ -34,3 +35,5 @@
 		<slot />
 	</main>
 </div>
+
+<Analytics />
