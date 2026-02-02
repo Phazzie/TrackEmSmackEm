@@ -12,7 +12,10 @@
 			<h2>{data.person.name}</h2>
 			<p class="muted">{data.person.email}</p>
 			{#if data.person.referredBy}
-				<p class="tag">Referred by {data.person.referredBy}</p>
+				<p class="tag">BetRivers: {data.person.referredBy}</p>
+			{/if}
+			{#if data.person.referredByFanduel}
+				<p class="tag" style="border-color: #00aff0; color: #00aff0; background: rgba(0, 175, 240, 0.1);">FanDuel: {data.person.referredByFanduel}</p>
 			{/if}
 		</div>
 		<div class="metric">

@@ -14,6 +14,7 @@ export const PersonSchema = z.object({
 	name: z.string().min(1),
 	email: z.string().email(),
 	referredBy: z.string().min(1).nullable(),
+	referredByFanduel: z.string().min(1).nullable(),
 	createdAt: z.string().datetime(),
 	updatedAt: z.string().datetime()
 });
@@ -45,7 +46,8 @@ export const MonthSnapshotSchema = z.object({
 export const CreatePersonInputSchema = z.object({
 	name: z.string().min(1),
 	email: z.string().email(),
-	referredBy: z.string().min(1).nullable()
+	referredBy: z.string().min(1).nullable(),
+	referredByFanduel: z.string().min(1).nullable(),
 });
 
 export const CreateCodeInputSchema = z.object({

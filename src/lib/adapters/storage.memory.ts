@@ -59,6 +59,7 @@ export class MemoryStorageAdapter implements StoragePort {
 			name: input.name,
 			email: input.email,
 			referredBy: input.referredBy,
+			referredByFanduel: input.referredByFanduel ?? null,
 			createdAt: timestamp,
 			updatedAt: timestamp
 		};

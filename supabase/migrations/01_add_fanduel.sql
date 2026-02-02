@@ -1,0 +1,1 @@
+alter table people add column if not exists referred_by_fanduel text;

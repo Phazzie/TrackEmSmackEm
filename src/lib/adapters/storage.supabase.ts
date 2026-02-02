@@ -16,6 +16,7 @@ function mapPerson(row: {
 	name: string;
 	email: string;
 	referred_by: string | null;
+	referred_by_fanduel: string | null;
 	created_at: string;
 	updated_at: string;
 }): Person {
@@ -24,6 +25,7 @@ function mapPerson(row: {
 		name: row.name,
 		email: row.email,
 		referredBy: row.referred_by,
+		referredByFanduel: row.referred_by_fanduel,
 		createdAt: row.created_at,
 		updatedAt: row.updated_at
 	};
@@ -104,7 +106,8 @@ export class SupabaseStorageAdapter implements StoragePort {
 			.insert({
 				name: input.name,
 				email: input.email,
-				referred_by: input.referredBy
+				referred_by: input.referredBy,
+				referred_by_fanduel: input.referredByFanduel
 			})
 			.select('*')
 			.single();

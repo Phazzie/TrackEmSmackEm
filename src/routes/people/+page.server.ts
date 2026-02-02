@@ -27,7 +27,8 @@ export const actions = {
 		const payload = {
 			name: String(form.get('name') ?? '').trim(),
 			email: String(form.get('email') ?? '').trim(),
-			referredBy: String(form.get('referredBy') ?? '').trim() || null
+			referredBy: String(form.get('referredBy') ?? '').trim() || null,
+			referredByFanduel: String(form.get('referredByFanduel') ?? '').trim() || null
 		};
 
 		const parsed = CreatePersonInputSchema.safeParse(payload);

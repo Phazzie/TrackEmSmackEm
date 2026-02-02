@@ -29,7 +29,10 @@
 					<h3>{person.name}</h3>
 					<p class="muted">{person.email}</p>
 					{#if person.referredBy}
-						<p class="tag">Referred by {person.referredBy}</p>
+						<p class="tag">BetRivers: {person.referredBy}</p>
+					{/if}
+					{#if person.referredByFanduel}
+						<p class="tag" style="border-color: #00aff0; color: #00aff0; background: rgba(0, 175, 240, 0.1);">FanDuel: {person.referredByFanduel}</p>
 					{/if}
 				</div>
 				<div class="metric">
@@ -56,8 +59,12 @@
 			<input name="email" type="email" placeholder="email@example.com" required />
 		</label>
 		<label>
-			<span>Referred by</span>
-			<input name="referredBy" placeholder="Optional referrer" />
+			<span>BetRivers Referrer</span>
+			<input name="referredBy" placeholder="Optional" />
+		</label>
+		<label>
+			<span>FanDuel Referrer</span>
+			<input name="referredByFanduel" placeholder="Optional" />
 		</label>
 		<button class="primary" type="submit" formaction="?/create">Save person</button>
 	</form>
