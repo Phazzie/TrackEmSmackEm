@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { enhance } from '$app/forms';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -40,7 +41,7 @@
 			<span></span>
 		</div>
 		{#each data.statuses as row}
-			<form class="table-row" method="post" action="?/set">
+			<form class="table-row" method="post" action="?/set" use:enhance>
 				<input type="hidden" name="codeId" value={row.code.id} />
 				<input type="hidden" name="month" value={data.month} />
 				<span>

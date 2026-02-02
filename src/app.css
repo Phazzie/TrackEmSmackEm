@@ -86,16 +86,21 @@ p {
 	flex-wrap: wrap;
 }
 
-.app-nav a {
+.app-nav a,
+.link-button {
 	padding: 0.5rem 1rem;
 	border-radius: 999px;
 	background: #fff3e2;
 	border: 1px solid #f1d2b4;
 	font-weight: 600;
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	cursor: pointer;
+	color: inherit;
+	font-size: 1rem;
 }
 
-.app-nav a:hover {
+.app-nav a:hover,
+.link-button:hover {
 	transform: translateY(-2px);
 	box-shadow: 0 8px 20px -12px rgba(224, 111, 56, 0.6);
 }

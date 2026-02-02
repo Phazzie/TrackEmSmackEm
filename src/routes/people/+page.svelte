@@ -1,7 +1,8 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { ActionData, PageData } from './$types';
 
 	export let data: PageData;
+	export let form: ActionData;
 
 	const totalMap = new Map(data.totals.map((entry) => [entry.id, entry.amount]));
 </script>
@@ -43,6 +44,9 @@
 <section class="panel">
 	<h2>Add person</h2>
 	<form method="post" class="form-grid" data-sveltekit-preload-data>
+		{#if form?.error}
+			<p style="color: var(--accent-strong); grid-column: 1 / -1; font-weight: bold;">{form.error}</p>
+		{/if}
 		<label>
 			<span>Name</span>
 			<input name="name" placeholder="Full name" required />

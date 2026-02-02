@@ -25,6 +25,9 @@
 			<a href="/people">People</a>
 			<a href="/codes">Codes</a>
 			<a href="/export">Export</a>
+			<form action="/logout" method="POST" style="display: contents;">
+				<button type="submit" class="link-button">Logout</button>
+			</form>
 		</nav>
 	</header>
 	<main class="app-main">

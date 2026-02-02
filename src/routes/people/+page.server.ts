@@ -36,7 +36,13 @@ export const actions = {
 		}
 
 		const storage = await getStorage();
-		await storage.createPerson(parsed.data);
+		try {
+			await storage.createPerson(parsed.data);
+		} catch (err) {
+			console.error('Failed to create person:', err);
+			return fail(400, { error: err instanceof Error ? err.message : 'Failed to create person' });
+		}
+		
 		const month = coerceMonth(url.searchParams.get('month'));
 		throw redirect(303, `/people?month=${month}`);
 	}
